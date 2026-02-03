@@ -1,0 +1,35 @@
+--Informational--
+UniStar
+Hathor Exploration
+Uranium One
+Bruce Power
+NB Power
+Ontario Power Generation
+Fluke Corporation
+SCANA 
+Westinghouse Electric Company
+Nuclear Fuel Services
+United Nuclear Corporation
+American Nuclear Society
+Atomic Energy of Canada limited
+Canadian Nuclear Safety Commission
+International Atomic Energy Agency
+United States Department of Energy
+World Nuclear Association
+Nuclear Energy Institute
+Sequoyah Fuels Corporation 
+--Stocks--
+Cameco: CCJ 
+Dension Mines: DNN
+Dominion Energy: D
+Duke Energy: DUK
+Ge Vernova Hitachi Nuclear Energy: GEV
+Southern Company: SO
+Brookfield Renewable partners: BEP
+Constellation Energy Corporation: CEG
+Centrus Energy: LEU
+Nano Nuclear Energy: NNE
+--ETF--
+VanEck Uranium and Nuclear ETF : NLR
+First Trust RBA American reniassance ETF : AIRR
+
