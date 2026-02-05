@@ -20,15 +20,16 @@ Nuclear Energy Institute
 Sequoyah Fuels Corporation 
 --Stocks--
 Cameco: CCJ 
-Dension Mines: DNN
-Dominion Energy: D
-Duke Energy: DUK
-Ge Vernova Hitachi Nuclear Energy: GEV
-Southern Company: SO
-Brookfield Renewable partners: BEP
-Constellation Energy Corporation: CEG
-Centrus Energy: LEU
-Nano Nuclear Energy: NNE
+DensionMines: DNN
+DominionEnergy: D
+DukeEnergy: DUK
+GeVernova: GEV
+SouthernCompany: SO
+BrookfieldRenewablePartners: BEP
+ConstellationEnergyCorporation: CEG
+CentrusEnergyCorp: LEU
+NanoNuclearEnergy: NNE
+BWXTechnologies: BWXT
 --ETF--
 VanEck Uranium and Nuclear ETF : NLR
 First Trust RBA American reniassance ETF : AIRR

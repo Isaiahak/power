@@ -5,6 +5,6 @@ import (
 )
 
 func main() {
-	var test = true
+	var test = false
 	update(test)
 }
