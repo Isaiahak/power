@@ -23,13 +23,13 @@ Cameco: CCJ
 DensionMines: DNN
 DominionEnergy: D
 DukeEnergy: DUK
-GeVernova: GEV
 SouthernCompany: SO
 BrookfieldRenewablePartners: BEP
+GeVernova: GEV
+BWXTechnologies: BWXT
 ConstellationEnergyCorporation: CEG
 CentrusEnergyCorp: LEU
 NanoNuclearEnergy: NNE
-BWXTechnologies: BWXT
 --ETF--
 VanEck Uranium and Nuclear ETF : NLR
 First Trust RBA American reniassance ETF : AIRR

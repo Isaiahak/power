@@ -54,21 +54,16 @@ func update(test bool) error {
 func updateHistory(stockInfo []string) error {
 	if len(stockInfo) > 1 {
 		stockName := stockInfo[0]
-		// bwt, brook
-		flipCSV(stockName)
-		fmt.Println("finished flipped for: ", stockName)
-
-		/*
-			stockSymbol := stockInfo[1]
-			info, err := getStockInfo(stockSymbol)
-			if err != nil {
-				return fmt.Errorf("failed to retrieve stock information: %s", err)
-			}
-			err = saveToCSV(info, stockName)
-			if err != nil {
-				return fmt.Errorf("failed to retieve stock information: %s", err)
-			}
-		*/
+		fmt.Println("starting history update for: ", stockName)
+		stockSymbol := stockInfo[1]
+		info, err := getStockInfo(stockSymbol)
+		if err != nil {
+			return fmt.Errorf("failed to retrieve stock information: %s", err)
+		}
+		err = saveToCSV(info, stockName)
+		if err != nil {
+			return fmt.Errorf("failed to retieve stock information: %s", err)
+		}
 		return nil
 	} else {
 		return fmt.Errorf("stockInfo was missing information")
@@ -114,7 +109,7 @@ func getStockInfo(stockSymbol string) (DailyInformation, error) {
 func saveToCSV(info DailyInformation, stockName string) error {
 
 	filePath := dir + stockName + ".csv"
-	f, err := os.OpenFile(filePath, os.O_RDWR, 0644)
+	f, err := os.OpenFile(filePath, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		return fmt.Errorf("failed to open csv for %s,:\n due to: %s", stockName, err)
 	}
@@ -129,12 +124,14 @@ func saveToCSV(info DailyInformation, stockName string) error {
 	Low := strconv.FormatFloat(info.Low, 'f', 2, 64)
 	Low = "$" + Low
 
-	data := []string{info.Date, Volume, Close, Open, High, Low, "\n"}
+	data := []string{info.Date, Close, Volume, Open, High, Low}
 
 	dataCSVFormat := strings.Join(data, ",")
+
+	newLine := "\n"
 	dataCSVFormat = dataCSVFormat[:len(dataCSVFormat)-2]
 
-	if _, err := f.Write([]byte(dataCSVFormat)); err != nil {
+	if _, err := f.Write([]byte(newLine + dataCSVFormat)); err != nil {
 		f.Close()
 		return fmt.Errorf("failed to save info to file: %s", err)
 	}
@@ -233,6 +230,7 @@ func checkKeyType(info *DailyInformation, key, value strings.Builder) (DailyInfo
 		info.Low = Low
 	case "Volume":
 		volume := strings.Split(valueString, ".")
+		// need to figure out a safe way to do this
 		number := volume[1][len(volume[1])-1]
 		var zero string
 		switch number {
@@ -245,6 +243,7 @@ func checkKeyType(info *DailyInformation, key, value strings.Builder) (DailyInfo
 		case 'T':
 			zero = "000000000000"
 		}
+		// figure out safe way to do this
 		valueString = volume[0] + volume[1][:len(volume[1])-1] + zero
 		Volume, err := strconv.Atoi(valueString)
 		fmt.Println(Volume)
